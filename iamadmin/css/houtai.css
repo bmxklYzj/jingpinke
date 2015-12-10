@@ -1,0 +1,37 @@
+/*main.php*/
+.mycontainer{
+    margin-top: 70px;
+    width: 450px;
+    margin-left: 200px;
+}
+.mycontainer .form-group{
+    margin: 20px auto;
+    width: 400px;
+}
+.mycontainer .form-control{
+    width: 400px;
+}
+.mycontainer .mybutton{
+    width: 150px;
+    margin: 20px auto;
+}
+
+/*选择和新增章节的代码*/
+.form-group .charpter-left{
+    width: 180px;
+}
+.mycontainer .charpter-group-left{
+    width: 180px;
+    margin-right: 10px;
+}
+.mycontainer .charpter-group-right{
+    width: 150px;
+}
+.form-group .charpter-right{
+    width: 150px;
+    float: left;
+}
+.charpter-btn{
+    margin-top: 43px;
+    margin-left: 5px;;
+}

@@ -1,0 +1,183 @@
+body{
+    background-color: #F3F3F3;
+    /*background: url(image/background.jpg);*/
+    background-image: url(image/background.jpg);
+    font: 13px/1.5 "microsoft yahei",Helvetica,Tahoma,Arial,"Microsoft jhengHei",sans-serif;
+    color: #555;
+}
+.media-bottom{
+    margin-bottom: 120px;
+}
+.my_navbar{
+    color: #FFF;
+    background-color: #2E77BD;
+    border-bottom: 2px solid #1F5588;
+}
+.my_navbar .my_navbar-brand{
+    color: #FFFFFF;
+    font-size: large;
+}
+.my_navbar .my_navbar-nav > ul>li > a{
+    color: #FFFFFF;
+    font-size: large;
+}
+
+.my_navbar a{
+    font-size: large;
+}
+.my_navbar a:hover{
+    background-color: #1F5588;
+}
+
+.carousel{
+    height: 500px;
+    margin-bottom: 50px;
+}
+
+
+
+.carousel .item{
+    height: 500px;
+}
+
+.carousel-inner > .item > img{
+    min-width: 100%;
+    height: 500px;
+}
+
+
+.threePic{
+    margin-bottom: 50px;
+}
+.threePic .col-lg-4 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/*footer*/
+.featurette img{
+    height: 300px;
+}
+.featurette-divider {
+    margin: 80px 0; /* Space out the Bootstrap <hr> more */
+}
+
+/* Thin out the marketing headings */
+.featurette-heading {
+    font-weight: 300;
+    line-height: 1;
+    letter-spacing: -1px;
+}
+
+
+.footer{
+    height: 50px;
+    background-color: #2E77BD;
+    color: #FFFFFF;
+    font-size: 16px;
+}
+.footer a{
+    color: aqua;
+    font-size: 16px;
+}
+.footer p{
+    padding: 12px 0px 0px 0px;
+}
+.myfooter{
+    /*position: absolute;*/
+    /*bottom: 0px;*/
+    /*width: 100%;*/
+}
+/*.myfooter .myfooter-bottombar{*/
+    /*position: absolute;*/
+/*}*/
+
+
+/*以下是login.html和register.html的css*/
+.form-group{
+    width: 300px;
+    float: left;
+}
+.form-group .form-control{
+    width: 300px;
+}
+.container-register{
+    padding-left: 150px;
+    width: 700px;
+    margin-top: 30px;
+}
+.container-register .reset{
+    float:left;
+    width: 100px;
+    margin-top: 30px;
+}
+.container-register .login{
+    float: left;
+    margin-left: 100px;
+    width: 100px;
+    margin-top: 30px;
+}
+.container-register h3{
+    color: #286090;
+    padding-left: 30px;
+    margin-bottom: 30px;
+}
+.container-register .stuinfo{
+    float: left;
+    padding-top: 30px;
+    padding-left: 10px;
+    color: red;
+}
+
+/*login*/
+
+.container-login h3{
+    padding-left: 30px;
+    margin: 60px auto;
+}
+.container-login .reset,.login{
+    margin-top: 30px;
+}
+
+
+/*leftnav css*/
+.leftnav-container{
+    width: 200px;
+    background-color: #2E77BD;
+    color: #FFFFFF;
+}
+.leftnav-container dt{
+    font-size: 1.2em;
+    padding-bottom: 10px;
+    position: relative;
+}
+.leftnav-container dt img{
+    margin-right: 20px;
+    position: absolute;
+    right: 0px;
+    top: 10px;
+}
+.leftnav-container dd{
+    padding-left: 40px;
+}
+.leftnav-container dl{
+    margin-bottom: 0px;
+    /*padding-bottom: 10px;*/
+}
+.leftnav-container a:link,a:hover,a:active,a:visited{
+    color: #FFFFFF;
+    text-decoration: none;
+    /*background-color: #1b6d85;*/
+    /*-webkit-transition: all 0.7s;*/
+    /*-moz-transition: all 0.7s;*/
+    /*-ms-transition: all 0.7s;*/
+    /*-o-transition: all 0.7s;*/
+    /*transition: all 0.7s;*/
+}
+.leftnav .leftnav-back{
+    width: 100%;
+    height: 100%;
+    min-height: 800px;
+    position: relative;
+    background-color: darkslategray;
+}

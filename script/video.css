@@ -1,0 +1,102 @@
+html,body{
+    font-size: 16px;
+}
+
+h1,
+h2{
+    color: #2E77BD;
+}
+
+.mycontainer{
+    margin-top: 100px;
+}
+.content-left{
+    /*margin: 40px 0px;*/
+}
+
+/*左侧导航栏*/
+.leftnav{
+    margin-top: 25px;
+}
+
+/*.video-info{*/
+    /*margin-top: 90px;*/
+/*}*/
+.video-info h1{
+    text-align: center;
+}
+.video-describe a{
+    color: #555555;
+    text-decoration: dashed;
+}
+.video_meta{
+    padding: 30px;
+    font-size: 1.2em;
+}
+.bdsharebuttonbox{
+    float: right;
+}
+.video-meta-left{
+    float: left;
+    width: 70%;
+}
+.video-info-right{
+    float: right;
+    width: 30%;
+}
+.video-info h1{
+    margin-bottom: 40px;
+}
+.video{
+    margin: 10px auto;
+    width: 825px;
+    height: 500px;
+}
+.video-main{
+    width: 825px;
+    height: 500px;
+}
+.media img{
+    width: 64px;
+    height: 64px;
+    border-radius: 64px;
+}
+
+.content-right h2{
+    margin-bottom: 30px;
+}
+.content-right{
+    position: fixed;
+    margin: 180px 0px;
+    margin-left: 40px;
+}
+.content-right a{
+    color: #FFFFFF;
+    padding: 10px;
+    border-bottom: 2px solid #FFFFFF;
+    /*margin: 5px auto;*/
+    text-decoration: none;
+    display: block;
+    transition: all 0.5s ease-in-out;
+}
+.content-right a:link, a:visited{
+    background-color: #2E77BD;
+}
+.content-right a:hover, a:active{
+    background-color: #1F5588;
+}
+
+/*footer*/
+.footer{
+    height: 50px;
+    background-color: #2E77BD;
+    color: #FFFFFF;
+    font-size: 16px;
+}
+.footer a{
+    color: aqua;
+    font-size: 16px;
+}
+.footer p{
+    padding: 12px 0px 0px 0px;
+}
