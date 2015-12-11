@@ -49,11 +49,11 @@ h2{
 }
 .video{
     margin: 10px auto;
-    width: 825px;
+    width: 100%;
     height: 500px;
 }
 .video-main{
-    width: 825px;
+    width: 100%;
     height: 500px;
 }
 .media img{
@@ -88,7 +88,7 @@ h2{
 
 /*footer*/
 .footer{
-    height: 50px;
+    /*height: 50px;*/
     background-color: #2E77BD;
     color: #FFFFFF;
     font-size: 16px;
@@ -99,4 +99,16 @@ h2{
 }
 .footer p{
     padding: 12px 0px 0px 0px;
+}
+
+/*comment*/
+.comment{
+    margin: 20px auto;
+}
+.comment .pleft{
+    margin-right: 20px;
+    color: #2E77BD;
+}
+.comment .media-left{
+    display: block;
 }

@@ -1,12 +1,18 @@
 body{
     background-color: #F3F3F3;
     /*background: url(image/background.jpg);*/
-    background-image: url(image/background.jpg);
+    background-image: url("image/background.jpg");
     font: 13px/1.5 "microsoft yahei",Helvetica,Tahoma,Arial,"Microsoft jhengHei",sans-serif;
     color: #555;
 }
 .media-bottom{
-    margin-bottom: 120px;
+    margin-bottom: 20px;
+}
+.media-bottom .media-bottom-comment{
+    margin: 20px auto;
+}
+.media-bottom .media-bottom-comment .comment{
+    width: 100%;
 }
 .my_navbar{
     color: #FFF;
@@ -71,7 +77,7 @@ body{
 
 
 .footer{
-    height: 50px;
+    /*height: 50px;*/
     background-color: #2E77BD;
     color: #FFFFFF;
     font-size: 16px;
@@ -142,7 +148,7 @@ body{
 
 /*leftnav css*/
 .leftnav-container{
-    width: 200px;
+    width: 100%;
     background-color: #2E77BD;
     color: #FFFFFF;
 }

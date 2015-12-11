@@ -9,7 +9,7 @@
 </html>
 <?php
 //            echo "<script>alert('hello')</script>";
-            require_once "functions.php";
+            require_once "fucntion.php";
             connectDb();
             $query = mysql_query("select * from catalog");
             while($row=mysql_fetch_array($query)){

@@ -5,47 +5,40 @@
 
 
         <div class="leftnav-container">
-            <dl>
-                <dt><a style="color: #FFF;" href="#">一级标题一</a><img src="icon/right.png"></dt>
-                <dd><a href="video.php">副标题1</a></dd>
-                <dd><a href="#">副标题2</a></dd>
-                <dd><a href="#">副标题3</a></dd>
-                <dd><a href="#">副标题4</a></dd>
-                <dd><a href="#">副标题5</a></dd>
+            <?php
+            require_once "connect.php";
+            $sql="select * from charpter";
+            $query=mysql_query($sql);
+            while($row=mysql_fetch_array($query)){
+                $charpter_id=$row['charpter_id'];
+                $title=$row['title'];
+                ?>
+                <dl>
+                    <dt><a style="color: #FFF;" href="#"><?php echo "$title"; ?></a><img src="icon/right.png"></dt>
+                    <?php
+                    $s="select * from video WHERE charpter_id='{$charpter_id }'";
+                    $q=mysql_query($s);
+                    while($r=mysql_fetch_array($q)){
+                        $titlevideo=$r['title'];
+                        $video_id=$r['video_id'];
+                        ?>
+                        <dd><a href="video.php?video_id=<?php echo "$video_id"; ?>"><?php echo "$titlevideo"; ?></a></dd>
 
-            </dl>
-            <dl>
-                <dt><a style="color: #FFF;" href="#">一级标题二</a><img src="icon/right.png"></dt>
-                <dd><a href="#">副标题1</a></dd>
-                <dd><a href="#">副标题2</a></dd>
-                <dd><a href="#">副标题3</a></dd>
-                <dd><a href="#">副标题4</a></dd>
-                <dd><a href="#">副标题5</a></dd>
-            </dl>
-            <dl>
-                <dt><a style="color: #FFF;" href="#">一级标题三</a><img src="icon/right.png"></dt>
-                <dd><a href="#">副标题1</a></dd>
-                <dd><a href="#">副标题2</a></dd>
-                <dd><a href="#">副标题3</a></dd>
-                <dd><a href="#">副标题4</a></dd>
-                <dd><a href="#">副标题5</a></dd>
-            </dl>
-            <dl>
-                <dt><a style="color: #FFF;" href="#">一级标题四</a><img src="icon/right.png"></dt>
-                <dd><a href="#">副标题1</a></dd>
-                <dd><a href="#">副标题2</a></dd>
-                <dd><a href="#">副标题3</a></dd>
-                <dd><a href="#">副标题4</a></dd>
-                <dd><a href="#">副标题5</a></dd>
-            </dl>
-            <dl>
-                <dt><a style="color: #FFF;" href="#">一级标题五</a><img src="icon/right.png"></dt>
-                <dd><a href="#">副标题1</a></dd>
-                <dd><a href="#">副标题2</a></dd>
-                <dd><a href="#">副标题3</a></dd>
-                <dd><a href="#">副标题4</a></dd>
-                <dd><a href="#">副标题5</a></dd>
-            </dl>
+                        <?php
+                    }
+                    ?>
+<!--                    <dd><a href="video.php">副标题1</a></dd>-->
+<!--                    <dd><a href="#">副标题2</a></dd>-->
+<!--                    <dd><a href="#">副标题3</a></dd>-->
+<!--                    <dd><a href="#">副标题4</a></dd>-->
+<!--                    <dd><a href="#">副标题5</a></dd>-->
+
+                </dl>
+            <?php
+            }
+            ?>
+
+
         </div>
     </div>
 

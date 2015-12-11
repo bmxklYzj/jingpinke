@@ -19,7 +19,16 @@
             <ul class="nav nav-pills">
                 <!--<li class="active"><a href="#">L    ink <span class="sr-only">(current)</span></a></li>-->
                 <li><a href="ppt.php">课件</a></li>
-                <li><a href="video.php">视频</a></li>
+                <?php
+//                每次点击给video.php传一个默认值，该默认值是最后一个添加的视频
+                require_once "connect.php";
+                $sql="select video_id from video";
+                $query=mysql_query($sql);
+                $row=mysql_fetch_array($query);
+                $video_id=$row['video_id'];
+//                echo "$video_id";
+                ?>
+                <li><a href="video.php?video_id=<?php echo "$video_id"; ?>">视频</a></li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">其它<span class="caret"></span></a>
                     <ul class="dropdown-menu">
@@ -35,8 +44,18 @@
             </ul>
 
             <ul class="nav nav-pills navbar-right">
-                <li><a href="login.php">登录</a></li>
-                <li><a href="register.php">注册</a></li>
+                <?php session_start();
+                    if(isset($_SESSION['nicheng'])){
+                        $nicheng=$_SESSION['nicheng'];
+                        echo "<p style='float: left;margin-top: 7%;'>欢迎您:</p><li><a href='#'>$nicheng</a></li><li><a href='logout.php'>退出</a></li>";
+                    }else{
+                        ?>
+                        <li><a href="login.php">登录</a></li>
+                        <li><a href="register.php">注册</a></li>
+                        <?php
+                    }
+                ?>
+
             </ul>
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->

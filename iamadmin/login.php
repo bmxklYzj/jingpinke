@@ -40,41 +40,26 @@
     </script>
 </head>
 <body>
-<!--<div class="container container-login">-->
-<!--<h3>欢迎登录精品课程网</h3>-->
-<!--<form action="">-->
-<!--<div class="form-group">-->
-<!--<label for="exampleInputEmail1">用户名：</label>-->
-<!--<input type="email" class="form-control" id="exampleInputEmail1" placeholder="用户名">-->
-<!--</div>-->
-<!--<div class="form-g  roup">-->
-<!--<label for="exampleInputPassword1">密码：</label>-->
-<!--<input type="password" class="form-control" id="exampleInputPassword1" placeholder="密码">-->
-<!--</div>-->
-<!--<br>-->
-<!--<button type="reset" class="btn btn-primary reset">重置</button>-->
-<!--<button type="submit" class="btn btn-primary login">登录</button>-->
-<!--</form>-->
-<!--</div>-->
+
 
 <div class="container container-register container-login">
     <h3>欢迎登录后台管理系统</h3>
-    <form action="login_success.php" method="post">
+    <form action="login_handle.php" method="post">
 
         <div class="form-group">
             <label for="exampleInputEmail1">昵称名：</label>
-            <input type="text" class="form-control" id="nicheng" placeholder="昵称名">
+            <input type="text" class="form-control" id="nicheng" name="nicheng" placeholder="昵称名">
         </div>
         <span class="stuinfo" id="nicheng_tx"></span>
         <div class="form-group">
             <label for="exampleInputPassword1">密码：</label>
-            <input type="password" class="form-control" id="password" placeholder="密码">
+            <input type="password" class="form-control" id="password" name="password" placeholder="密码">
         </div>
         <span class="stuinfo" id="password_tx"></span>
         <br>
         <div style="clear: both;"></div>
         <button type="reset" class="btn btn-primary reset">重置</button>
-        <button type="submit" class="btn btn-primary login" >注册</button>
+        <button type="submit" class="btn btn-primary login" >登录</button>
     </form>
 </div>
 

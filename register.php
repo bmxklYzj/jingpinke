@@ -11,8 +11,13 @@
 
 
     <script>
-
-
+        function check(){
+            if($("#uu").html()=="1"){
+                return false;
+            }else{
+                return true;
+            }
+        }
 
         $(function(){
 
@@ -35,6 +40,21 @@
 //                    alert("学号必须是十位数字！");
                 }
                 else{
+                    $.ajax({
+                        type:'GET',
+                        url:"register_handle.php?act=check&xuehao="+stuid,
+                        dataType:'text',
+                        success:function(data){
+//                            alert(data);
+                            if(data==1){
+                                $("#uu").html("1");
+                                $("#stuid_tx").html("学号已经存在！");
+                            }else{
+                                $("#uu").html("2");
+                                $("#stuid_tx").html("");
+                            }
+                        }
+                    })
                     $("#stuid_tx").html("");
                 }
             });
@@ -83,6 +103,7 @@
                     $("#password2_tx").html("两次输入的密码不一致，请重新输入");
                     $("#password1").html("");
                     $("#password2").html("");
+                    $("#uu").html("1");
                 }else{
                     $("#password2_tx").html("");
                 }
@@ -95,28 +116,30 @@
     <title>注册</title>
 </head>
 <body>
+
+
 <div class="container container-register">
     <h3>欢迎注册精品课程网</h3>
-    <form action="register.php" method="post">
+    <form action="register_handle.php" method="post" onsubmit="return check()">
 
         <div class="form-group">
             <label for="exampleInputXuehao">学号：</label>
-            <input type="text" class="form-control" id="stuid"  placeholder="学号">
+            <input type="text" class="form-control" id="stuid" name="xuehao"  placeholder="学号">
         </div>
-        <span id="stuid_tx" class="stuinfo" style="float: left;"></span>
+        <span id="stuid_tx" class="stuinfo" style="float: left;"></span><span id="uu" style="display: none;"></span>
         <div class="form-group">
             <label for="exampleInputUsername">姓名：</label>
-            <input type="text" class="form-control" id="username"  placeholder="姓名">
+            <input type="text" class="form-control" id="username" name="username"  placeholder="姓名">
         </div>
         <span id="username_tx" class="stuinfo" style="float: left;"></span>
         <div class="form-group">
             <label for="exampleInputUsername">昵称名：(以后就要靠它来登录啦)</label>
-            <input type="text" class="form-control" id="nicheng"  placeholder="昵称名">
+            <input type="text" class="form-control" id="nicheng" name="nicheng" placeholder="昵称名">
         </div>
         <span id="nicheng_tx" class="stuinfo" style="float: left;"></span>
         <div class="form-group">
             <label for="exampleInputPassword">密码：</label>
-            <input type="password" class="form-control" id="password1" placeholder="密码">
+            <input type="password" class="form-control" id="password1" name="password" placeholder="密码">
         </div>
         <span id="password1_tx" class="stuinfo" style="float: left;"></span>
         <div class="form-group">

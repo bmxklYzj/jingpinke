@@ -11,6 +11,6 @@
         die('Could not connect: ' . mysql_error());
     }
     mysql_query("set names utf8");
-    mysql_select_db("Class_Sql",$con);
+    mysql_select_db("jingpinke",$con);
 
 ?>

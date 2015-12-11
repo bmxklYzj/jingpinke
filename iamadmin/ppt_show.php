@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
     <title>后台主页面</title>
     <link rel="stylesheet" type="text/css" href="../script/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="../script/mystyle.css">
@@ -38,8 +38,7 @@ require_once "houtai_header.php";
         </tr>
         <tr>
             <?php
-            require_once "../functions.php";
-            connectDb();
+            require_once "../connect.php";
 
             $query = mysql_query("select * from resource_ppt");
             while($row = mysql_fetch_array($query)){

@@ -14,8 +14,7 @@
 
 <!--头部-->
 <?php
-    require "../functions.php";
-    connectDb();
+    require "../connect.php";
 
     require_once "houtai_header.php";
 ?>
@@ -28,20 +27,20 @@
 
         <div class="form-group">
             <label>视频标题：</label>
-            <input type="text" class="form-control" name="Res_name" placeholder="输入视频标题">
+            <input type="text" class="form-control" name="title" placeholder="输入视频标题">
         </div>
         <div class="form-group charpter-group-left">
             <label>选择章节</label>
             <select class="form-control charpter-left" name="charpter_select">
                 <?php
 
-                $query = mysql_query("select * from catalog");
+                $query = mysql_query("select * from charpter");
                 while($row=mysql_fetch_array($query)){
-                    $Cat_Name = $row["Cat_Name"];
+                    $title = $row["title"];
 //                echo "<script>alert('$Cat_Name')</script>";
 //                echo "<opton>'.$Cat_Name.'</opton>";
                     echo "<option>";
-                    echo $Cat_Name;
+                    echo $title;
                     echo "</option>";
                 }
                 ?>
@@ -53,19 +52,23 @@
 
         <div>
             <div class="form-group charpter-group-right">
-                <label>新建章节：</label>
+                <label>无所选章节？新建章节：</label>
                 <input type="text" class="form-control charpter-right" name="new_charpter" placeholder="输入新章节">
             </div>
             <button type="submit" class="btn btn-primary charpter-btn">新建</button>
         </div>
 
         <div class="form-group">
-            <label for="fileinput">选择文件</label>
+            <label for="fileinput">选择视频文件</label>
             <input type="file" id="file" name="file">
         </div>
         <div class="form-group">
+            <label for="fileinput">选择视频静态图片</label>
+            <input type="file" id="file" name="poster">
+        </div>
+        <div class="form-group">
             <label>视频详细介绍：</label>
-            <textarea class="form-control" rows="3" name="Res_info"></textarea>
+            <textarea class="form-control" rows="3" name="info"></textarea>
         </div>
 
 

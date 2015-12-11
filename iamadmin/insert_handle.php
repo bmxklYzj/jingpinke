@@ -15,8 +15,7 @@
  * Date: 2015/11/6
  * Time: 22:54
  */
-require_once "../functions.php";
-connectDb();
+require_once "../connect.php";
 
 //if($_FILES["file"]["error"] > 0){
 //    echo "Error: ".$_FILES["file"]["error"]."</br>";
@@ -32,7 +31,7 @@ connectDb();
 $new_charpter = $_POST["new_charpter"];
 if($new_charpter != ""){
     echo "<script>alert('成功添加章节：".$new_charpter."')</script>";
-    $query = mysql_query("insert into catalog (Cat_Name) VALUES ('$new_charpter')");
+    $query = mysql_query("insert into charpter (title) VALUES ('$new_charpter')");
     header("location:insert.php");
 }else{
     $charpter_select = $_POST["charpter_select"];
@@ -45,20 +44,21 @@ if($new_charpter != ""){
 //{
 //    echo "no";
 //}
-    $query = mysql_query("select * from catalog where Cat_Name = '".$charpter_select."'");
+    $query = mysql_query("select * from charpter where title = '".$charpter_select."'");
     $row = mysql_fetch_array($query);
-    $id = $row["Cat_Char"];
+    $id = $row["charpter_id"];
 
 //echo "<script>alert('$id')</script>";
 
 
 
     move_uploaded_file($_FILES["file"]["tmp_name"], iconv("UTF-8", "gb2312", "../video/".$_FILES["file"]["name"]));
-    mysql_query("insert into resource_ppt (Res_Resname, Res_Resinst, Res_location, Res_ReadTime, Res_ResChar) VALUES ('$_POST[Res_name]', '$_POST[Res_info]',  '".$_FILES["file"]["name"]."', 0, '$id')");
+    move_uploaded_file($_FILES["poster"]["tmp_name"], iconv("UTF-8", "gb2312", "../image/poster/".$_FILES["poster"]["name"]));
+    mysql_query("insert into video (title, info, location, clicktime, charpter_id, poster) VALUES ('$_POST[title]', '$_POST[info]',  '".$_FILES["file"]["name"]."', 0, '$id',  '".$_FILES["poster"]["name"]."')");
 
     echo "<script>alert('添加成功！')</script>";
 //$id = "video";
-    header("location:ppt_show.php");
+    header("location:video_show.php");
 }
 
 

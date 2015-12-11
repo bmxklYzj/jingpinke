@@ -1,3 +1,16 @@
+<!--顺便在头部写上验证管理员用户的代码-->
+<?php
+//    header("Content-type: text/html; charset=utf-8");
+//    if(!session_id()){
+//        session_start();
+//        echo "<script>window.location.href='login.php'</script>";
+//    }
+    session_start();
+    if($_SESSION['admin']==""){
+        echo "<script>window.location.href='login.php'</script>";
+    }
+?>
+
 <!--后台界面头部-->
 
 <div class="container-fluid">
@@ -21,7 +34,7 @@
             <div class="collapse navbar-collapse my_navbar-nav" id="bs-example-navbar-collapse-1">
                 <ul class="nav nav-pills">
                     <!--<li class="active"><a href="#">L    ink <span class="sr-only">(current)</span></a></li>-->
-                    <li><a href="ppt.php">查看注册用户</a></li>
+                    <li><a href="user.php">查看注册用户</a></li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">课件<span class="caret"></span></a>
                         <ul class="dropdown-menu">
@@ -32,15 +45,16 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">视频<span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="#">查看所有视频</a></li>
-                            <li><a href="#">上传新视频</a></li>
+                            <li><a href="video_show.php">查看所有视频</a></li>
+                            <li><a href="insert.php">上传新视频</a></li>
 
                         </ul>
                     </li>
+                    <li><a href="charpter_show.php">查看章节</a></li>
                 </ul>
 
                 <ul class="nav nav-pills navbar-right">
-                    <li><a href="">退出</a></li>
+                    <li><a href="logout.php">退出</a></li>
                 </ul>
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
