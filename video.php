@@ -18,7 +18,7 @@ require_once "header.php";
 <div class="container mycontainer">
     <!--        我是左侧导航栏-->
     <?php
-    require_once "leftnav.php";
+    require_once "video_leftnav.php";
     ?>
 
     <?php
@@ -79,8 +79,9 @@ require_once "header.php";
                 <h2>评论专区</h2>
                 <hr/>
                 <?php
-                $user_id=$_SESSION['user_id'];
-                $sql="select * from usercomment where user_id='{$user_id}' and video_id='{$video_id}'";
+//                $user_id=$_SESSION['user_id'];
+//                $sql="select * from usercomment where user_id='{$user_id}' and video_id='{$video_id}'";
+                $sql="select * from usercomment where video_id='{$video_id}'";
                 $query=mysql_query($sql);
                 $cnt=0;
                 $commentnum=mysql_num_rows($query);
@@ -88,10 +89,16 @@ require_once "header.php";
                     echo "<p>暂无评论</p>";
                 }else{
                 while($row=mysql_fetch_array($query)){
+                    $user_id=$row['user_id'];
+                    $s="select * from user where user_id=$user_id";
+                    $q=mysql_query($s);
+                    $r=mysql_fetch_array($q);
+                    $xuehao=$r['xuehao'];
+                    $nicheng=$r['nicheng'];
                     ?>
                     <div class="comment">
                         <div class="media-left media-middle">
-                            <p class="pleft">评论<?php $cnt++;echo "$cnt"; ?></p>
+                            <p class="pleft">评论<?php $cnt++;echo "$cnt"; echo "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$xuehao"; echo "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$nicheng"?></p>
                         </div>
                         <div class="media-body">
                             <p><?php echo "{$row['content']}"; ?></p>

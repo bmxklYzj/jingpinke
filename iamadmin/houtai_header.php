@@ -39,7 +39,7 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">课件<span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a href="ppt_show.php">查看所有课件</a></li>
-                            <li><a href="insert.php">上传新课件</a></li>
+                            <li><a href="ppt_insert.php">上传新课件</a></li>
                         </ul>
                     </li>
                     <li class="dropdown">
@@ -51,6 +51,7 @@
                         </ul>
                     </li>
                     <li><a href="charpter_show.php">查看章节</a></li>
+                    <li><a href="comment_show.php">管理评论</a></li>
                 </ul>
 
                 <ul class="nav nav-pills navbar-right">
